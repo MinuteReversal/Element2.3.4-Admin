@@ -46,9 +46,9 @@ module.exports = {
     */
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
-        config.externals={
-          "amap":'AMap'
-        };
+        // config.externals={
+        //   "amap":'AMap'
+        // };
         //config.mode = "spa";
         config.devtool = "inline-source-map ";
         config.entry.polyfill="babel-polyfill";
