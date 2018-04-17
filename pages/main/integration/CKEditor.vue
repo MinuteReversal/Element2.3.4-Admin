@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="padding-l">
     <ckeditor v-model="html" height="300px"/>
     <el-button @click="onShow">显示值</el-button>
     <el-button @click="onSet">设置值</el-button>

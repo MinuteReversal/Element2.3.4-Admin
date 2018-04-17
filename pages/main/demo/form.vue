@@ -1,4 +1,5 @@
 <template>
+<div class="padding-l">
   <el-form ref="form" :model="form" label-width="80px">
     <el-form-item label="姓名">
       <el-input v-model="form.name"></el-input>
@@ -47,6 +48,7 @@
       <el-button @click="showForm">显示表单数据</el-button>
     </div>
   </el-form>
+</div>
 </template>
 <script>
 export default {

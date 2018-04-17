@@ -1,5 +1,7 @@
 <template> 
-    <div>{{text}}</div>
+    <div class="padding-l">
+        <span>{{text}}</span>
+    </div>
 </template>
 <script>
     export default {

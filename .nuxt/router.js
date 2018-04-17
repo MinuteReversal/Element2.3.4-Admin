@@ -6,17 +6,18 @@ Vue.use(Router)
 const _175c7073 = () => import('..\\pages\\main.vue' /* webpackChunkName: "pages_main" */).then(m => m.default || m)
 const _5167d1fd = () => import('..\\pages\\main\\users\\index.vue' /* webpackChunkName: "pages_main_users_index" */).then(m => m.default || m)
 const _495e20a8 = () => import('..\\pages\\main\\demo\\index.vue' /* webpackChunkName: "pages_main_demo_index" */).then(m => m.default || m)
-const _2d9e7c5e = () => import('..\\pages\\main\\demo\\docs.vue' /* webpackChunkName: "pages_main_demo_docs" */).then(m => m.default || m)
-const _69bfb8d9 = () => import('..\\pages\\main\\integration\\ECharts.vue' /* webpackChunkName: "pages_main_integration_ECharts" */).then(m => m.default || m)
-const _24571579 = () => import('..\\pages\\main\\demo\\router.push.vue' /* webpackChunkName: "pages_main_demo_router.push" */).then(m => m.default || m)
-const _54134b7c = () => import('..\\pages\\main\\demo\\tableexpand.vue' /* webpackChunkName: "pages_main_demo_tableexpand" */).then(m => m.default || m)
 const _87492cf6 = () => import('..\\pages\\main\\demo\\listdetail.vue' /* webpackChunkName: "pages_main_demo_listdetail" */).then(m => m.default || m)
+const _24571579 = () => import('..\\pages\\main\\demo\\router.push.vue' /* webpackChunkName: "pages_main_demo_router.push" */).then(m => m.default || m)
+const _69bfb8d9 = () => import('..\\pages\\main\\integration\\ECharts.vue' /* webpackChunkName: "pages_main_integration_ECharts" */).then(m => m.default || m)
 const _129c16a6 = () => import('..\\pages\\main\\integration\\CKEditor.vue' /* webpackChunkName: "pages_main_integration_CKEditor" */).then(m => m.default || m)
-const _792b9440 = () => import('..\\pages\\main\\home\\welcome.vue' /* webpackChunkName: "pages_main_home_welcome" */).then(m => m.default || m)
+const _2d9e7c5e = () => import('..\\pages\\main\\demo\\docs.vue' /* webpackChunkName: "pages_main_demo_docs" */).then(m => m.default || m)
 const _5b91804c = () => import('..\\pages\\main\\demo\\form.vue' /* webpackChunkName: "pages_main_demo_form" */).then(m => m.default || m)
-const _3dd1c46a = () => import('..\\pages\\main\\demo\\importPage.vue' /* webpackChunkName: "pages_main_demo_importPage" */).then(m => m.default || m)
 const _063066b4 = () => import('..\\pages\\main\\demo\\list.vue' /* webpackChunkName: "pages_main_demo_list" */).then(m => m.default || m)
+const _3dd1c46a = () => import('..\\pages\\main\\demo\\importPage.vue' /* webpackChunkName: "pages_main_demo_importPage" */).then(m => m.default || m)
+const _54134b7c = () => import('..\\pages\\main\\demo\\tableexpand.vue' /* webpackChunkName: "pages_main_demo_tableexpand" */).then(m => m.default || m)
 const _28c57ba2 = () => import('..\\pages\\main\\demo\\urlQuery.vue' /* webpackChunkName: "pages_main_demo_urlQuery" */).then(m => m.default || m)
+const _792b9440 = () => import('..\\pages\\main\\home\\welcome.vue' /* webpackChunkName: "pages_main_home_welcome" */).then(m => m.default || m)
+const _43348ce8 = () => import('..\\pages\\main\\integration\\AMap.vue' /* webpackChunkName: "pages_main_integration_AMap" */).then(m => m.default || m)
 const _5ad2c6ca = () => import('..\\pages\\main\\demo\\urlParams\\_id.vue' /* webpackChunkName: "pages_main_demo_urlParams__id" */).then(m => m.default || m)
 const _3867a0b6 = () => import('..\\pages\\main\\users\\_id.vue' /* webpackChunkName: "pages_main_users__id" */).then(m => m.default || m)
 const _94b30bf0 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
@@ -95,14 +96,9 @@ export function createRouter () {
 					name: "main-demo"
 				},
 				{
-					path: "demo/docs",
-					component: _2d9e7c5e,
-					name: "main-demo-docs"
-				},
-				{
-					path: "integration/ECharts",
-					component: _69bfb8d9,
-					name: "main-integration-ECharts"
+					path: "demo/listdetail",
+					component: _87492cf6,
+					name: "main-demo-listdetail"
 				},
 				{
 					path: "demo/router.push",
@@ -110,14 +106,9 @@ export function createRouter () {
 					name: "main-demo-router.push"
 				},
 				{
-					path: "demo/tableexpand",
-					component: _54134b7c,
-					name: "main-demo-tableexpand"
-				},
-				{
-					path: "demo/listdetail",
-					component: _87492cf6,
-					name: "main-demo-listdetail"
+					path: "integration/ECharts",
+					component: _69bfb8d9,
+					name: "main-integration-ECharts"
 				},
 				{
 					path: "integration/CKEditor",
@@ -125,9 +116,9 @@ export function createRouter () {
 					name: "main-integration-CKEditor"
 				},
 				{
-					path: "home/welcome",
-					component: _792b9440,
-					name: "main-home-welcome"
+					path: "demo/docs",
+					component: _2d9e7c5e,
+					name: "main-demo-docs"
 				},
 				{
 					path: "demo/form",
@@ -135,19 +126,34 @@ export function createRouter () {
 					name: "main-demo-form"
 				},
 				{
-					path: "demo/importPage",
-					component: _3dd1c46a,
-					name: "main-demo-importPage"
-				},
-				{
 					path: "demo/list",
 					component: _063066b4,
 					name: "main-demo-list"
 				},
 				{
+					path: "demo/importPage",
+					component: _3dd1c46a,
+					name: "main-demo-importPage"
+				},
+				{
+					path: "demo/tableexpand",
+					component: _54134b7c,
+					name: "main-demo-tableexpand"
+				},
+				{
 					path: "demo/urlQuery",
 					component: _28c57ba2,
 					name: "main-demo-urlQuery"
+				},
+				{
+					path: "home/welcome",
+					component: _792b9440,
+					name: "main-home-welcome"
+				},
+				{
+					path: "integration/AMap",
+					component: _43348ce8,
+					name: "main-integration-AMap"
 				},
 				{
 					path: "demo/urlParams/:id?",

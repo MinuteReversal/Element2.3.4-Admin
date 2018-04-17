@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="padding-l">
         <el-table :data="tableData5">
             <el-table-column type="expand">
                 <template slot-scope="props">

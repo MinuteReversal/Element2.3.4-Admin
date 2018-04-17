@@ -167,7 +167,7 @@
             "FunctionName": "高德地图",
             "DisplayName": "高德地图",
             "Icon": "el-icon-message",
-            "ActionUrl": "/main/Order/List.html",
+            "ActionUrl": "/main/integration/amap",
             "FunctionType": "",
             "ChildrenModels": []
           }

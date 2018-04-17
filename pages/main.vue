@@ -34,7 +34,7 @@
                 </el-menu>
             </el-col>
         </aside>
-        <div class="subPage padding-l">
+        <div class="subPage">
             <nuxt-child/>
         </div>
     </div>

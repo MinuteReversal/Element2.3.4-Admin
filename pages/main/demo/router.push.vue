@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="padding-l">
   <el-button @click="push1">1</el-button>
   <el-button @click="push2">2</el-button>
   <el-button @click="push3">3</el-button>

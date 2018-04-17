@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="padding-l">
         <el-row class="padding-l">
             <el-col :span="12">
                 <span class="font-weight-blder">列表</span>

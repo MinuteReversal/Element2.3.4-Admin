@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div class="padding-l">
     <demo-list />
     <demo-list />
     <demo-form />

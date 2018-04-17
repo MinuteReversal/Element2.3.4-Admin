@@ -1,5 +1,5 @@
 <template>
-<div id="List">
+<div class="padding-l">
         <!--导航-->
         <el-row class="padding-l">
             <el-col span="12">

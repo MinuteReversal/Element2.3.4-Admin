@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="padding-l">
     <echarts />
   </div>
 </template>

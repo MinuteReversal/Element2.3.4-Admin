@@ -5,10 +5,8 @@
 import webConfig from "~/static/webConfig"
 
 export default {
-    data(){
-        return {
-           webConfig:webConfig.systemName      
-        };
-    }
+    data:()=>({
+        systemName:webConfig.systemName        
+    })
 }
 </script>
