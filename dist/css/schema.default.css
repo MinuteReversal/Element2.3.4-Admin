@@ -3,6 +3,10 @@
 * 宽、高、圆角、边框宽度、定位方式、对齐方式
 */
 
+body{
+    margin: 0;
+}
+
 /*#region 栅格化系统*/
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
     float: left;
@@ -489,6 +493,10 @@ table, tr {
     padding-right: 15px;
 }
 /*外边距*/
+.margin-none{
+    margin: 0;
+}
+
 .margin-m {
     margin: 5px;
 }

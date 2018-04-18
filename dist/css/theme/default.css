@@ -179,27 +179,6 @@ input:-ms-input-placeholder,
     background-size: 22px 22px;
     background-position: 10px 6px;
 }
-
-/*图标纹理*/
-.icon-texture-good {
-    background-image: url("/css/theme/default/good.png");
-}
-
-.icon-texture-search {
-    background-image: url("/css/theme/default/search.png");
-}
-
-.icon-texture-join {
-    background-image: url('/css/theme/default/u279.png');
-}
-
-.icon-texture-search {
-    background-image: url('/css/theme/default/search.png');
-}
-
-.icon-texture-return {
-    background-image: url('/css/theme/default/u279.png');
-}
 /*#region 元件*/
 /*按钮颜色*/
 .btn {
@@ -215,8 +194,6 @@ input:-ms-input-placeholder,
 
     .btn[class*="icon-size"] {
         display: inline;
-        width: auto;
-        height: auto;
     }
 /*#endregion*/
 
