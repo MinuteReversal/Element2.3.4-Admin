@@ -1,24 +1,26 @@
 ﻿//表示全局唯一标识符 (GUID)。
-function Guid(input) {
-    var array32 = new Array(); //存放32位数值的数组
-    if (typeof (input) === "string") { //如果构造函数的参数为字符串
-        initByString(array32, input);
-    }
-    else {
-        initByOther(array32);
-    }
-    //返回一个值，该值指示 Guid 的两个实例是否表示同一个值。
-    this.Equals = function (o) {
-        if (o && o.IsGuid) {
-            return this.ToString() == o.ToString();
-        } else {
-            return false;
+class Guid {
+    constructor(input) {
+        var array32 = new Array(); //存放32位数值的数组
+        if (typeof (input) === "string") { //如果构造函数的参数为字符串
+            initByString(array32, input);
         }
-    };
+        else {
+            initByOther(array32);
+        }
+        //返回一个值，该值指示 Guid 的两个实例是否表示同一个值。
+        this.Equals = function (o) {
+            if (o && o.IsGuid) {
+                return this.ToString() == o.ToString();
+            } else {
+                return false;
+            }
+        };
+    }
     //Guid对象的标记
-    this.isGuid = function () { };
+    isGuid() { }
     //返回 Guid 类的此实例值的 String 表示形式。
-    this.toString = function (format) {
+    toString(format) {
         if (typeof (format) == "string") {
             if (format == "N" || format == "D" || format == "B" || format == "P") {
                 return toStringWithFormat(array32, format);
@@ -28,10 +30,9 @@ function Guid(input) {
         } else {
             return toStringWithFormat(array32, "D");
         }
-    };
-
+    }
     //由字符串加载
-    function initByString(arr, g) {
+    initByString(arr, g) {
         g = g.replace(/\{|\(|\)|\}|-/g, "");
         g = g.toLowerCase();
         if (g.length != 32 || g.search(/[^0-9,a-f]/i) != -1) {
@@ -44,13 +45,12 @@ function Guid(input) {
         }
     }
     //由其他类型加载
-    function initByOther(arr) {
+    initByOther(arr) {
         var i = 32;
         while (i--) {
             arr.push("0");
         }
     }
-
     /*
     根据所提供的格式说明符，返回此 Guid 实例值的 String 表示形式。
     N  32 位： xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -58,7 +58,7 @@ function Guid(input) {
     B  括在大括号中、由连字符分隔的 32 位数字：{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx} 
     P  括在圆括号中、由连字符分隔的 32 位数字：(xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) 
     */
-    function toStringWithFormat(arr, format) {
+    toStringWithFormat(arr, format) {
         switch (format) {
             case "N":
                 return arr.toString().replace(/,/g, "");
@@ -78,15 +78,21 @@ function Guid(input) {
                 return new Guid();
         }
     }
+    static get empty(){
+        return new Guid();
+    }
+    static newGuid(){
+        var g = "";
+        var i = 32;
+        while (i--) {
+            g += Math.floor(Math.random() * 16.0).toString(16);
+        }
+        return new Guid(g);
+    }
 }
 //Guid 类的默认实例，其值保证均为零
 Guid.empty = new Guid();
 //初始化 Guid 类的一个新实例。
 Guid.newGuid = function () {
-    var g = "";
-    var i = 32;
-    while (i--) {
-        g += Math.floor(Math.random() * 16.0).toString(16);
-    }
-    return new Guid(g);
+
 };

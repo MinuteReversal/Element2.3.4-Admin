@@ -24,6 +24,7 @@
     </div>
 </template>
 <script>
+import axios from "axios"
 import webConfig from "~/static/webConfig"
 import apiConfig from "~/static/apiConfig"
 import md5 from "~/static/javascript/md5"
@@ -67,7 +68,7 @@ export default {
         userName: me.form.username,
         passwordMd5: md5(me.form.passwords)
       };
-      me.$http.get(apiConfig.user_login, postData).then(response => {
+      axios.get(apiConfig.user_login,{params:postData}).then(response => {
         me.$router.push("/main");
       });
     }

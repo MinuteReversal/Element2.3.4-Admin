@@ -13,7 +13,6 @@
                 </el-breadcrumb>
             </el-col>
         </el-row>
-
         <el-form :inline="true" v-model="search" class="background-color-minor margin-bottom-m padding-m">
             <el-form-item prop="name">
                 <el-input placeholder="审批人" v-model="search.name"></el-input>
@@ -25,13 +24,13 @@
                 </el-select>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary">查询</el-button>
+                <el-button type="primary" icon="el-icon-search" @click="getData">查询</el-button>
+                <el-button type="primary" icon="el-icon-plus">新增</el-button>
             </el-form-item>
         </el-form>
-
-        <el-table v-bind:data="list.tableData"
+        <el-table :data="list.tableData"
                   border highlight-current-row
-                  v-bind:default-sort="{prop: 'name', order: 'descending'}"
+                  :default-sort="{prop: 'name', order: 'descending'}"
                   class="col-12">
             <el-table-column type="selection"
                              width="55">
@@ -52,29 +51,26 @@
                              fixed="right"
                              width="400">
                 <template slot-scope="scope">
-                    <el-button size="small"
-                               v-on:click="onEdit(scope.$index, scope.row)">编辑</el-button>
-                    <el-button size="small"
-                               type="danger"
-                               v-on:click="onDelete(scope.$index, scope.row)">删除</el-button>
+                    <el-button size="small" icon="el-icon-edit" @click="onEdit(scope.$index, scope.row)">编辑</el-button>
+                    <el-button size="small" type="danger" icon="el-icon-delete"  @click="onDelete(scope.$index, scope.row)">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
         <el-pagination class="clear"
-                       v-on:size-change="handleSizeChange"
-                       v-on:current-change="handleCurrentChange"
-                       v-bind:current-page="list.currentPage"
-                       v-bind:page-sizes="[100, 200, 300, 400]"
-                       v-bind:page-size="100"
+                       @size-change="handleSizeChange"
+                       @current-change="handleCurrentChange"
+                       :current-page="list.currentPage"
+                       :page-sizes="[100, 200, 300, 400]"
+                       :page-size="100"
                        layout="total, sizes, prev, pager, next, jumper"
-                       v-bind:total="400">
+                       :total="400">
         </el-pagination>
     </div>
 </template>
 <script>
+    import axios from "axios"
     export default{
-        data() {
-            return {
+        data:() =>({
             search: {
                 name: "",
                 area: ""
@@ -83,7 +79,9 @@
                 tableData: [],
                 currentPage: 1
             }
-            };
+        }),
+        sync(){
+            this.getData();
         },
         methods: {
             /*
@@ -104,23 +102,9 @@
                 me.$confirm("确定删除？", "确定");
             },
             getData () {
-                this.list.tableData = [{
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1517 弄'
-                }, {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1519 弄'
-                }, {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1516 弄'
-                }];
+                axios.get("/data/demolist.json").then(response=>{
+                    this.list.tableData=response.data.Data;
+                })
             }
         },
         mounted () {

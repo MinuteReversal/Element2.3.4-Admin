@@ -42,8 +42,7 @@
 <script>
 import webConfig from "~/static/webConfig"
 import apiConfig from "~/static/apiConfig"
-import md5 from "~/static/javascript/md5"
-import $f from "~/static/javascript/framework"
+import axios from "axios"
 
 export default {
     data() {
@@ -61,7 +60,7 @@ export default {
     methods: {
         loadMenu () {
             var me = this;
-            me.$http.get(apiConfig.user_info).then(response=> {
+            axios.get(apiConfig.user_info).then(response=> {
                 me.menus = response.data.Data.UserMenuModels;
                 me.selectMenuByUrl(me.$route.path);
             });

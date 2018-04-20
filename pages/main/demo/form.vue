@@ -45,15 +45,21 @@
       </el-select>
     </el-form-item>
     <div>
-      <el-button @click="showForm">显示表单数据</el-button>
+      <el-button @click="onShow">显示数据</el-button>
+      <el-button @click="onSave">保存数据</el-button>
     </div>
   </el-form>
 </div>
 </template>
 <script>
 export default {
-  data () {
-    return {
+  props:{
+      params:{
+        type:Object,
+        default:()=>({})
+      }
+  },
+  data:()=>({
       form: {
         name: '反转的分针',
         birthday: new Date('1985-04-06'),
@@ -64,12 +70,17 @@ export default {
         region: 'chenggong',
         language: ['C', 'Java',"C++"]
       }
+  }),
+  methods: {
+    onShow () {
+      this.$alert(JSON.stringify(this.form))
+    },
+    onSave(){
+      this.$emit("confirm",this.form);
     }
   },
-  methods: {
-    showForm () {
-      this.$alert(JSON.stringify(this.form))
-    }
+  mounted(){
+    
   }
 }
 </script>
