@@ -34,8 +34,8 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   plugins: [
-    '~plugins/vue-resource',
-    '~plugins/element-ui'
+    '~/plugins/element-ui',
+    "~/plugins/loaderwindow"
   ],
   /*
   ** Build configuration

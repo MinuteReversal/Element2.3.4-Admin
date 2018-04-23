@@ -218,7 +218,7 @@
             "FunctionName": "窗口加载器",
             "DisplayName": "窗口加载器",
             "Icon": "el-icon-message",
-            "ActionUrl": "/main/custom/windowloader",
+            "ActionUrl": "/main/custom/loaderwindow",
             "FunctionType": "",
             "ChildrenModels": []
           }

@@ -3,7 +3,6 @@
         <component :is="componentId"></component>
     </div>
 </template>
-
 <script>
 let demoList= () => import("../demo/list.vue").then(m => m.default || m)
 
