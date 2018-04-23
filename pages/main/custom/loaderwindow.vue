@@ -7,7 +7,7 @@
 <script>
 export default {
   data:()=>({
-      path:"/main/demo/list?id=123"
+      path:"/main/demo/form?id=123"
   }),
   methods:{
       onOpen(){

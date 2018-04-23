@@ -1,6 +1,6 @@
 <template>
   <el-dialog :title="title" :visible.sync="visible" :modal="true" @close="onClose">
-    <nuxt-loader :path="path"></nuxt-loader>
+    <nuxt-loader :path="path" @confirm="onConfirm" @cancel="onCancel"></nuxt-loader>
   </el-dialog>
 </template>
 <script>
@@ -18,16 +18,17 @@ export default {
     },
     onConfirm(evt){
         this.$emit("confirm",evt)
+        this.visible=false
     },
     onCancel(evt){
         this.$emit("cancel",evt)
+        this.visible=false
     }
   },
   components:{
     'nuxt-loader':nuxtloader
   },
   mounted(){
-    console.log("mounted");
     this.$nextTick(()=>{
       this.visible=true
     })

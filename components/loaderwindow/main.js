@@ -34,7 +34,7 @@ export default {
                 settings.title = arguments[1];
             }
 
-            let instance = new loaderwindowConstructor();
+            var instance = new loaderwindowConstructor();
 
             for (let prop in settings) {
                 if (settings.hasOwnProperty(prop)) {

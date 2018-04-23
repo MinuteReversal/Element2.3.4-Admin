@@ -9,22 +9,15 @@ export default {
     path: {
       type: String,
       default: 'default'
-    },
-    params: {
-      type: Object,
-      default: () => null
-    },
-    _routerRoot:{
-      type:Object,
-      default:()=>$nuxt._routerRoot
     }
   },
   render(_, ref) {
-    console.log("nuxt-loader render");
-
+    
     var props = ref.props;
     var children = ref.children;
     var parent = ref.parent;
+    var listeners = ref.listeners;
+    var injections = ref.injections;
     var data = ref.data;
 
     // directly use parent context's createElement() function
@@ -42,10 +35,12 @@ export default {
     // attach instance registration hook
     // this will be called in the instance's injected lifecycle hooks
     data.registerRouteInstance = function (vm, val) {
-      vm._routerRoot={
-        _route:resolved,
+      vm._routerRoot = {
+        _route: resolved,
         _router: $nuxt.$router
       }
+      vm.$on("confirm", (evt) => { if (listeners.confirm) listeners.confirm(evt) })
+      vm.$on("cancel", (evt) => { if (listeners.cancel) listeners.cancel(evt) })
     }
 
       // also register instance in prepatch hook
