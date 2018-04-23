@@ -11,7 +11,7 @@ export default {
   }),
   methods:{
       onOpen(){
-          this.$loaderwindow(this.path).then(()=>{this.$alert("then")}).catch(()=>{this.$alert("catch")});
+          this.$loaderwindow(this.path).then((evt)=>{this.$alert(JSON.stringify(evt))}).catch(()=>{this.$alert("catch")});
       }
   }
 }

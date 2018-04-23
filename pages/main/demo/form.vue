@@ -80,7 +80,8 @@ export default {
     }
   },
   mounted(){
-    
+    console.log("mounted");
+    this.$alert(JSON.stringify(this.$route.query));
   }
 }
 </script>

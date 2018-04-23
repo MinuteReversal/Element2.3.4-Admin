@@ -109,7 +109,9 @@
         },
         mounted () {
             var me = this;
+            console.log("list mounted");
             me.getData();
+            this.$alert(JSON.stringify(this.$route.query));
         }
     };
 </script>

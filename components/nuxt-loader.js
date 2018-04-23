@@ -13,6 +13,14 @@ export default {
       params:{
         type:Object,
         default:()=>null
+      },
+      $route:{
+        type:Object,
+        default:()=>null
+      },
+      $router:{
+        type:Object,
+        default:()=>null
       }
     },
     render (_, ref) {
@@ -32,7 +40,7 @@ export default {
 
       let resolved= $nuxt.$router.resolve(props.path).resolved;
       let component= resolved.matched.find(x=>x.path===resolved.path).components.default;
-  
+      
       return h(component, data, children)
     }
   }
