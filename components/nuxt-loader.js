@@ -39,8 +39,10 @@ export default {
         _route: resolved,
         _router: $nuxt.$router
       }
-      vm.$on("confirm", (evt) => { if (listeners.confirm) listeners.confirm(evt) })
-      vm.$on("cancel", (evt) => { if (listeners.cancel) listeners.cancel(evt) })
+
+      for(var listenerName in listeners){
+        vm.$on(listenerName, (evt) => {  listeners[listenerName](evt) })
+      }
     }
 
       // also register instance in prepatch hook
