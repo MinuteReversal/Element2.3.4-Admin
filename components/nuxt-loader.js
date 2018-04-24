@@ -52,7 +52,7 @@ export default {
       };
 
     // resolve props
-    var propsToPass = data.props = resolveProps(route, matched.props && matched.props[name]);
+    var propsToPass = data.props = resolveProps(resolved, matched.props && matched.props[name]);
     if (propsToPass) {
       // clone to prevent mutation
       propsToPass = data.props = extend({}, propsToPass);
