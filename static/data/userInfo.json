@@ -221,6 +221,26 @@
             "ActionUrl": "/main/custom/loaderwindow",
             "FunctionType": "",
             "ChildrenModels": []
+          },
+          {
+            "FunctionGuid": "00000000-0000-0000-0000-000000000000",
+            "ParentGuid": "00000000-0000-0000-0000-000000000000",
+            "FunctionName": "冷却按钮",
+            "DisplayName": "冷却按钮",
+            "Icon": "el-icon-message",
+            "ActionUrl": "/main/custom/buttonCooldown",
+            "FunctionType": "",
+            "ChildrenModels": []
+          },
+          {
+            "FunctionGuid": "00000000-0000-0000-0000-000000000000",
+            "ParentGuid": "00000000-0000-0000-0000-000000000000",
+            "FunctionName": "数据组件",
+            "DisplayName": "数据组件",
+            "Icon": "el-icon-message",
+            "ActionUrl": "/main/custom/dataComponents",
+            "FunctionType": "",
+            "ChildrenModels": []
           }
         ]
       },
