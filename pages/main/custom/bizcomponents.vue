@@ -1,15 +1,15 @@
 <template>
     <div class="padding-xl">
-        <biz-dictionary src="/api/Dictionary/StoreType/Constant" v-model="ruleForm.storeType" placeholder="选择网点类型"></biz-dictionary><br />
-        <biz-dictionary src="/api/Dictionary/StoreStaffType/Constant" v-model="ruleForm.storeStaff" placeholder="选择网点人员职务类型"></biz-dictionary><br />
-        <biz-dictionary src="/api/Dictionary/CustomerGroupType/Constant" v-model="ruleForm.customerGroupType" placeholder="选择客户群类型"></biz-dictionary><br />
-        <biz-dictionary src="/api/Dictionary/CompetitorType/Constant" v-model="ruleForm.competitorType" placeholder="选择同业机构"></biz-dictionary><br />
-        <biz-area-tree v-model="ruleForm.areaCode1" mode="array" placeholder="返回为数组"></biz-area-tree><br />
-        <biz-area-tree v-model="ruleForm.areaCode2" mode="six" placeholder="返回为六位字串"></biz-area-tree><br />
-        <biz-area-tree v-model="ruleForm.areaCode3" mode="variable" placeholder="返回为可变字串"></biz-area-tree><br />
-        <biz-muddled v-model="ruleForm.store1" src="/Data/Stores" :show-columns="['Name','SerialNumber']" display-field="Name" value-field="Uid" placeholder="门店列表绑定Uid"></biz-muddled><br />
-        <biz-muddled v-model="ruleForm.store2" src="/Data/Stores" :show-columns="['Name','SerialNumber']" display-field="Name" value-field="model" placeholder="门店列表绑定模型"></biz-muddled><br />
-        <biz-muddled v-model="ruleForm.store3" src="/Data/Stores" :show-columns="['Name']" display-field="Name" value-field="Name" placeholder="只显示一个列"></biz-muddled><br />
+        <biz-dictionary src="/data/Dictionary/StoreType/Constant.json" v-model="ruleForm.storeType" placeholder="选择网点类型"></biz-dictionary><br />
+        <biz-dictionary src="/data/Dictionary/StoreStaffType/Constant.json" v-model="ruleForm.storeStaff" placeholder="选择网点人员职务类型"></biz-dictionary><br />
+        <biz-dictionary src="/data/Dictionary/CustomerGroupType/Constant.json" v-model="ruleForm.customerGroupType" placeholder="选择客户群类型"></biz-dictionary><br />
+        <biz-dictionary src="/data/Dictionary/CompetitorType/Constant.json" v-model="ruleForm.competitorType" placeholder="选择同业机构"></biz-dictionary><br />
+        <biz-area-tree src="/data/Region.json" v-model="ruleForm.areaCode1" mode="array" placeholder="返回为数组"></biz-area-tree><br />
+        <biz-area-tree src="/data/Region.json" v-model="ruleForm.areaCode2" mode="six" placeholder="返回为六位字串"></biz-area-tree><br />
+        <biz-area-tree src="/data/Region.json" v-model="ruleForm.areaCode3" mode="variable" placeholder="返回为可变字串"></biz-area-tree><br />
+        <biz-muddled v-model="ruleForm.store1" src="/data/Stores.json" :show-columns="['Name','SerialNumber']" display-field="Name" value-field="Uid" placeholder="门店列表绑定Uid"></biz-muddled><br />
+        <biz-muddled v-model="ruleForm.store2" src="/data/Stores.json" :show-columns="['Name','SerialNumber']" display-field="Name" value-field="model" placeholder="门店列表绑定模型"></biz-muddled><br />
+        <biz-muddled v-model="ruleForm.store3" src="/data/Stores.json" :show-columns="['Name']" display-field="Name" value-field="Name" placeholder="只显示一个列"></biz-muddled><br />
         <el-button @click="submit">展示数据</el-button><el-button @click="setData">设置数据</el-button>
     </div>
 </template>
