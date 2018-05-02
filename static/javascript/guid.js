@@ -1,12 +1,12 @@
 ﻿//表示全局唯一标识符 (GUID)。
 class Guid {
     constructor(input) {
-        var array32 = new Array(); //存放32位数值的数组
+        this.array32 = new Array(); //存放32位数值的数组
         if (typeof (input) === "string") { //如果构造函数的参数为字符串
-            initByString(array32, input);
+            this.initByString(this.array32, input);
         }
         else {
-            initByOther(array32);
+            this.initByOther(this.array32);
         }
         //返回一个值，该值指示 Guid 的两个实例是否表示同一个值。
         this.Equals = function (o) {
@@ -23,12 +23,12 @@ class Guid {
     toString(format) {
         if (typeof (format) == "string") {
             if (format == "N" || format == "D" || format == "B" || format == "P") {
-                return toStringWithFormat(array32, format);
+                return this.toStringWithFormat(this.array32, format);
             } else {
-                return toStringWithFormat(array32, "D");
+                return this.toStringWithFormat(this.array32, "D");
             }
         } else {
-            return toStringWithFormat(array32, "D");
+            return this.toStringWithFormat(this.array32, "D");
         }
     }
     //由字符串加载
@@ -36,7 +36,7 @@ class Guid {
         g = g.replace(/\{|\(|\)|\}|-/g, "");
         g = g.toLowerCase();
         if (g.length != 32 || g.search(/[^0-9,a-f]/i) != -1) {
-            initByOther(arr);
+            this.initByOther(arr);
         }
         else {
             for (var i = 0; i < g.length; i++) {
@@ -67,11 +67,11 @@ class Guid {
                 strD = strD.replace(/,/g, "");
                 return strD;
             case "B":
-                var strB = toStringWithFormat(arr, "D");
+                var strB = this.toStringWithFormat(arr, "D");
                 strB = "{" + strB + "}";
                 return strB;
             case "P":
-                var strP = toStringWithFormat(arr, "D");
+                var strP = this.toStringWithFormat(arr, "D");
                 strP = "(" + strP + ")";
                 return strP;
             default:
@@ -90,9 +90,5 @@ class Guid {
         return new Guid(g);
     }
 }
-//Guid 类的默认实例，其值保证均为零
-Guid.empty = new Guid();
-//初始化 Guid 类的一个新实例。
-Guid.newGuid = function () {
 
-};
+export default Guid;

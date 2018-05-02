@@ -4,13 +4,16 @@
                         :key = "item.DataValue"
                         :label = "item.DataName"
                         :value = "item.DataValue">
-            <image-preview v-if="item.IconEnabled" style="float: left;margin-top:-2px;" width="24px" height="24px" :src="item.Icon" alt="24x24"></image-preview>
+            <biz-image v-if="item.IconEnabled" style="float: left;margin-top:-2px;" width="24px" height="24px" :src="item.Icon" alt="24x24"></biz-image>
             <span style="float: left">{{ item.DataName }}</span>
             <span style="float: right; color: #8492a6; font-size: 13px">{{ item.DataValue }}</span>
         </el-option>
     </el-select>
 </template>
 <script>
+import axios from "axios"
+import ELEMENT from "element-ui"
+import BizImage from "~/components/BizImage.vue"
   /**
  * author      : 反转的分针
  * date        : 20170713
@@ -21,7 +24,6 @@
  * @param {string} value v-model
  * @returns {string} item.DataValue
  */
-import ELEMENT from "element-ui"
 export default {
     props: {
         "src": {
@@ -58,7 +60,7 @@ export default {
         },
         getData: function () {
             var me = this;
-            me.$http.get(me.src).then(function (response) {
+            axios.get(me.src).then(function (response) {
                 me.options = response.data;
             });
         }
@@ -66,7 +68,7 @@ export default {
     components: {
         "el-select": ELEMENT.Select,
         "el-option": ELEMENT.Option,
-        "image-preview":vueImagePreview
+        "biz-image":BizImage
     },
     mounted: function () {
         this.getData();

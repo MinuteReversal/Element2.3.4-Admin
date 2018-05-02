@@ -1,5 +1,5 @@
 <template>
-    <el-select v-model="val" clearable filterable :filter-method="filterMethod" ref="select" :remote="remote" :loading="loading" :remote-method="getData" :placeholder="placeholder" @change="handleChange"> 
+    <el-select v-model="val" ref="select" :loading="loading" :placeholder="placeholder" @change="handleChange"> 
         <el-option v-for="(item,index) in options"
         :key = "index"
         :label = "item[displayField]"
@@ -10,8 +10,6 @@
     </el-select>
 </template>
 <script>
-import ELEMENT from "element-ui"
-import axios from "axios"
   /**
  * author      : 反转的分针
  * date        : 20170713
@@ -25,9 +23,10 @@ import axios from "axios"
  * @param {String} value v-model
  * @returns {String|Object} item.DataValue
  * @example
- *  <biz-muddled v-model="ruleForm.store1" src="/Data/Stores" :show-columns="['Name','SerialNumber']" display-field="Name" value-field="Uid" placeholder="门店列表绑定Uid"></biz-muddled>
- *  <biz-muddled v-model="ruleForm.store2" src="/Data/Stores" :show-columns="['Name','SerialNumber']" display-field="Name" value-field="model" placeholder="门店列表绑定模型"></biz-muddled>
- */
+ *    <biz-select v-model="search.RoleUid" src="/api/Account/Role" :show-columns="['RoleName']" display-field="RoleName" value-field="Uid" placeholder="选择角色"></biz-select><br />
+*/
+import ELEMENT from "element-ui"
+import axios from "axios"
 export default {
     props: {
         "src": {

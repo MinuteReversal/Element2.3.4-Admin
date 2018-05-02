@@ -2,7 +2,9 @@
   <el-autocomplete v-model="val" :fetch-suggestions="getData" :placeholder="placeholder" @select="handleSelect" @input="$emit('input',val)"></el-autocomplete>
 </template>
 <script>
-    /**
+import ELEMENT from "element-ui"
+import axios from "axios"
+/**
  * author      : 反转的分针
  * date        : 20171206
  * mail        : 114233763@qq.com
@@ -15,7 +17,6 @@
  * @example
  * <biz-autocomplete v-model="name" :src="webconfig.apiServer+'/data/ICBCStaff'" value-field="FullName" placeholder="输入姓名"></biz-autocomplete>
 */
-import ELEMENT from "element-ui"
 export default {
     props: {
         "src": {
@@ -85,7 +86,7 @@ export default {
                 cb(me.options);
             }
             else if (typeof queryString === "string") {
-                me.$http.get(me.src, {
+                axios.get(me.src, {
                     params: {
                         $filter: me.getOdataFilter(queryString)
                     }

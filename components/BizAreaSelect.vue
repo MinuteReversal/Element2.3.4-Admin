@@ -31,6 +31,7 @@
 </template>
 <script>
 import ELEMENT from "element-ui"
+import axios from "axios"
 /**
  * author      : 反转的分针
  * date        : 20170808
@@ -261,7 +262,7 @@ export default {
         getData: function () {
             var me = this;
             me.loading = true;
-            me.$http.get(me.src).then(function (response) {
+            axios.get(me.src).then(function (response) {
                 me.loading = false;
                 me.areas = me.areaTreeToCaseCaderTree(response.data);
                 me.province.options = me.areas;

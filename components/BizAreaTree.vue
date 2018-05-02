@@ -3,6 +3,7 @@
 </template>
 <script>
 import ELEMENT from "element-ui"
+import axios from "axios"
 /**
  * author      : 反转的分针
  * date        : 20170810
@@ -81,7 +82,7 @@ export default {
         },
         getOptions: function () {
             var me = this;
-            me.$http.get(me.src).then(function (response) {
+            axios.get(me.src).then(function (response) {
                 me.options = me.areaTreeToCaseCaderTree(response.data);
             });
         },
