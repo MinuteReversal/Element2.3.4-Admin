@@ -25,6 +25,7 @@
  * @example
  *    <biz-dropdown-list v-model="search.RoleUid" src="/api/Account/Role" :show-columns="['RoleName']" display-field="RoleName" value-field="Uid" placeholder="选择角色"></biz-dropdown-list><br />
 */
+import ELEMENT from "element-ui"
 export default {
     props: {
         "src": {

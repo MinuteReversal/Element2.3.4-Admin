@@ -235,10 +235,10 @@
           {
             "FunctionGuid": "00000000-0000-0000-0000-000000000000",
             "ParentGuid": "00000000-0000-0000-0000-000000000000",
-            "FunctionName": "数据组件",
-            "DisplayName": "数据组件",
+            "FunctionName": "业务组件",
+            "DisplayName": "业务组件",
             "Icon": "el-icon-message",
-            "ActionUrl": "/main/custom/dataComponents",
+            "ActionUrl": "/main/custom/bizcomponents",
             "FunctionType": "",
             "ChildrenModels": []
           }

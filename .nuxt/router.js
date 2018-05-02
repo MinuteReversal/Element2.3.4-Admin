@@ -13,10 +13,10 @@ const _43348ce8 = () => import('..\\pages\\main\\integration\\AMap.vue' /* webpa
 const _063066b4 = () => import('..\\pages\\main\\demo\\list.vue' /* webpackChunkName: "pages_main_demo_list" */).then(m => m.default || m)
 const _54134b7c = () => import('..\\pages\\main\\demo\\tableexpand.vue' /* webpackChunkName: "pages_main_demo_tableexpand" */).then(m => m.default || m)
 const _69bfb8d9 = () => import('..\\pages\\main\\integration\\ECharts.vue' /* webpackChunkName: "pages_main_integration_ECharts" */).then(m => m.default || m)
-const _5e5129a1 = () => import('..\\pages\\main\\custom\\buttonCooldown.vue' /* webpackChunkName: "pages_main_custom_buttonCooldown" */).then(m => m.default || m)
+const _4d61b435 = () => import('..\\pages\\main\\custom\\bizcomponents.vue' /* webpackChunkName: "pages_main_custom_bizcomponents" */).then(m => m.default || m)
 const _44a243a3 = () => import('..\\pages\\main\\custom\\loadcomponent.vue' /* webpackChunkName: "pages_main_custom_loadcomponent" */).then(m => m.default || m)
+const _5e5129a1 = () => import('..\\pages\\main\\custom\\buttonCooldown.vue' /* webpackChunkName: "pages_main_custom_buttonCooldown" */).then(m => m.default || m)
 const _07ec5cc9 = () => import('..\\pages\\main\\custom\\component.vue' /* webpackChunkName: "pages_main_custom_component" */).then(m => m.default || m)
-const _3a00a1c4 = () => import('..\\pages\\main\\custom\\dataComponents.vue' /* webpackChunkName: "pages_main_custom_dataComponents" */).then(m => m.default || m)
 const _28c57ba2 = () => import('..\\pages\\main\\demo\\urlQuery.vue' /* webpackChunkName: "pages_main_demo_urlQuery" */).then(m => m.default || m)
 const _4b50398c = () => import('..\\pages\\main\\custom\\nuxtloader.vue' /* webpackChunkName: "pages_main_custom_nuxtloader" */).then(m => m.default || m)
 const _5b91804c = () => import('..\\pages\\main\\demo\\form.vue' /* webpackChunkName: "pages_main_demo_form" */).then(m => m.default || m)
@@ -137,9 +137,9 @@ export function createRouter () {
 					name: "main-integration-ECharts"
 				},
 				{
-					path: "custom/buttonCooldown",
-					component: _5e5129a1,
-					name: "main-custom-buttonCooldown"
+					path: "custom/bizcomponents",
+					component: _4d61b435,
+					name: "main-custom-bizcomponents"
 				},
 				{
 					path: "custom/loadcomponent",
@@ -147,14 +147,14 @@ export function createRouter () {
 					name: "main-custom-loadcomponent"
 				},
 				{
+					path: "custom/buttonCooldown",
+					component: _5e5129a1,
+					name: "main-custom-buttonCooldown"
+				},
+				{
 					path: "custom/component",
 					component: _07ec5cc9,
 					name: "main-custom-component"
-				},
-				{
-					path: "custom/dataComponents",
-					component: _3a00a1c4,
-					name: "main-custom-dataComponents"
 				},
 				{
 					path: "demo/urlQuery",

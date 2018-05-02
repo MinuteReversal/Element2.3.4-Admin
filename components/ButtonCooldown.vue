@@ -24,9 +24,9 @@
 </template>
 <script>
 import Vue from "vue"
-import Element from "element-ui"
+import ELEMENT from "element-ui"
 export default Vue.extend({
-    mixins:[Element.Button],
+    mixins:[ELEMENT.Button],
     props:{
         second:{
           type:Number,

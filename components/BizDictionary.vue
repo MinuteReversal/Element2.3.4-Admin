@@ -21,6 +21,7 @@
  * @param {string} value v-model
  * @returns {string} item.DataValue
  */
+import ELEMENT from "element-ui"
 export default {
     props: {
         "src": {

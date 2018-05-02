@@ -15,6 +15,7 @@
  * @example
  * <biz-autocomplete v-model="name" :src="webconfig.apiServer+'/data/ICBCStaff'" value-field="FullName" placeholder="输入姓名"></biz-autocomplete>
 */
+import ELEMENT from "element-ui"
 export default {
     props: {
         "src": {

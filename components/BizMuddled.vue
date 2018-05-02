@@ -26,6 +26,7 @@
  *  <biz-muddled v-model="ruleForm.store1" src="/Data/Stores" :show-columns="['Name','SerialNumber']" display-field="Name" value-field="Uid" placeholder="门店列表绑定Uid"></biz-muddled>
  *  <biz-muddled v-model="ruleForm.store2" src="/Data/Stores" :show-columns="['Name','SerialNumber']" display-field="Name" value-field="model" placeholder="门店列表绑定模型"></biz-muddled>
  */
+import ELEMENT from "element-ui"
 export default {
     props: {
         "src": {
@@ -61,7 +62,7 @@ export default {
             "default": ""
         }
     },
-    data: function () {
+    data () {
         return {
             "loading": false,
             "val": "",
