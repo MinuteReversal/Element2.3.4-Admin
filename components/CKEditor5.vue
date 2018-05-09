@@ -5,7 +5,6 @@
 <script>
 //npm install --save @ckeditor/ckeditor5-build-classic
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-
 export default {
   props: {
         // 只检测类型
@@ -51,7 +50,7 @@ export default {
             var me = this;
             //https://docs.ckeditor.com/ckeditor5/latest/api/module_core_editor_editorconfig-EditorConfig.html
             ClassicEditor.create(me.$el.querySelector("input"), {
-                language:"zh-cn"
+                language:"zh-cn",
             }).then( editor => {
                  me.ckeditor = editor;
                  window.ckeditor5=editor;

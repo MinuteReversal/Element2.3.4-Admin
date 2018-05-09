@@ -35,8 +35,7 @@ module.exports = {
   loading: { color: '#3B8070' },
   plugins: [
     '~/plugins/element-ui',
-    "~/plugins/loaderwindow",
-    "~/plugins/ckeditor4"
+    "~/plugins/loaderwindow"
   ],
   /*
   ** Build configuration

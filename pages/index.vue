@@ -24,8 +24,6 @@
     </div>
 </template>
 <script>
-window.CKEDITOR_BASEPATH="/javascript/ckeditor_4.9.2_full"
-import "ckeditor"
 import axios from "axios"
 import webConfig from "~/static/webConfig"
 import apiConfig from "~/static/apiConfig"
@@ -55,7 +53,6 @@ export default {
   methods: {
     login() {
       var me = this;
-      console.log(me.$refs.form);
       me.$refs.form.validate(valid => {
         if (valid) {
           me.authUser();
