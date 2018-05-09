@@ -24,10 +24,13 @@
     </div>
 </template>
 <script>
+window.CKEDITOR_BASEPATH="/javascript/ckeditor_4.9.2_full"
+import "ckeditor"
 import axios from "axios"
 import webConfig from "~/static/webConfig"
 import apiConfig from "~/static/apiConfig"
 import md5 from "~/static/javascript/md5"
+
 export default {
   data() {
     return {

@@ -17,7 +17,7 @@ module.exports = {
       { name: 'format-detection', content: 'email=no' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'apple-touch-fullscreen', content: 'yes' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -35,7 +35,8 @@ module.exports = {
   loading: { color: '#3B8070' },
   plugins: [
     '~/plugins/element-ui',
-    "~/plugins/loaderwindow"
+    "~/plugins/loaderwindow",
+    "~/plugins/ckeditor4"
   ],
   /*
   ** Build configuration

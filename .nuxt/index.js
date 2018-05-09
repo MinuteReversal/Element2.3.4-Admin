@@ -14,6 +14,7 @@ import { setContext, getLocation, getRouteData } from './utils'
 /* Plugins */
 import nuxt_plugin_elementui_a6a1b20a from 'nuxt_plugin_elementui_a6a1b20a' // Source: ..\\plugins\\element-ui
 import nuxt_plugin_loaderwindow_067f0c39 from 'nuxt_plugin_loaderwindow_067f0c39' // Source: ..\\plugins\\loaderwindow
+import nuxt_plugin_ckeditor4_7e43b76e from 'nuxt_plugin_ckeditor4_7e43b76e' // Source: ..\\plugins\\ckeditor4
 
 
 // Component: <no-ssr>
@@ -137,6 +138,7 @@ async function createApp (ssrContext) {
   
   if (typeof nuxt_plugin_elementui_a6a1b20a === 'function') await nuxt_plugin_elementui_a6a1b20a(app.context, inject)
   if (typeof nuxt_plugin_loaderwindow_067f0c39 === 'function') await nuxt_plugin_loaderwindow_067f0c39(app.context, inject)
+  if (typeof nuxt_plugin_ckeditor4_7e43b76e === 'function') await nuxt_plugin_ckeditor4_7e43b76e(app.context, inject)
   
 
   // If server-side, wait for async component to be resolved first

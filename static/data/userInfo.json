@@ -144,10 +144,20 @@
           {
             "FunctionGuid": "00000000-0000-0000-0000-000000000000",
             "ParentGuid": "00000000-0000-0000-0000-000000000000",
-            "FunctionName": "CKEditor",
-            "DisplayName": "CKEditor",
+            "FunctionName": "CKEditor5",
+            "DisplayName": "CKEditor5",
             "Icon": "el-icon-message",
-            "ActionUrl": "/main/integration/CKEditor",
+            "ActionUrl": "/main/integration/CKEditor5",
+            "FunctionType": "",
+            "ChildrenModels": []
+          },
+          {
+            "FunctionGuid": "00000000-0000-0000-0000-000000000000",
+            "ParentGuid": "00000000-0000-0000-0000-000000000000",
+            "FunctionName": "CKEditor4",
+            "DisplayName": "CKEditor4",
+            "Icon": "el-icon-message",
+            "ActionUrl": "/main/integration/CKEditor4",
             "FunctionType": "",
             "ChildrenModels": []
           },
