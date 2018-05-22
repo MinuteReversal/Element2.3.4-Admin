@@ -37,23 +37,29 @@ export default Vue.extend({
         return {
             cooldownSecond:60,
             showSecond:false,
-            timer:null
+            timer:null,
+            isDisabled:false
         };
     },
     methods: {
       handleClick(evt) {
         var me=this;
-        me.disabled=true;
+        me.isDisabled=true;
         me.showSecond=true;
         me.cooldownSecond = me.second;
         me.timer= setInterval(()=>{
           if(--me.cooldownSecond===0){
             clearInterval(me.timer);
-            me.disabled=false;
+            me.isDisabled=false;
             me.showSecond=false;
           }
         },1000);
         me.$emit('click', evt);
+      }
+    },
+    computed: {
+      buttonDisabled() {
+        return this.disabled || this.isDisabled || (this.elForm || {}).disabled;
       }
     }
 })

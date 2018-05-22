@@ -251,6 +251,16 @@
             "ActionUrl": "/main/custom/bizcomponents",
             "FunctionType": "",
             "ChildrenModels": []
+          },
+          {
+            "FunctionGuid": "00000000-0000-0000-0000-000000000000",
+            "ParentGuid": "00000000-0000-0000-0000-000000000000",
+            "FunctionName": "功能可见",
+            "DisplayName": "功能可见",
+            "Icon": "el-icon-message",
+            "ActionUrl": "/main/custom/permissionbutton",
+            "FunctionType": "",
+            "ChildrenModels": []
           }
         ]
       },

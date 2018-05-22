@@ -35,7 +35,8 @@ module.exports = {
   loading: { color: '#3B8070' },
   plugins: [
     '~/plugins/element-ui',
-    "~/plugins/loaderwindow"
+    "~/plugins/loaderwindow",
+    "~/plugins/v-permission"
   ],
   /*
   ** Build configuration
