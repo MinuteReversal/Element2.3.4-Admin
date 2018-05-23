@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-button @click="onShow" v-permission="permissionName">显示</el-button>
+        <el-button @click="onShow" v-permission="'showData1'">显示</el-button>
         <el-button v-if="canAdd()" @click="onAdd" >加入权限</el-button>
         <el-button v-else @click="onRemove" >删除权限</el-button>
         <el-button @click="onShowPermissions">显示权限集</el-button>
