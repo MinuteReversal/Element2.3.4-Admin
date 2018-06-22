@@ -27,7 +27,7 @@ module.exports = {
  *  Customize router mode
  */
   router: {
-    mode: 'hash',// "hash" | "history" | "abstract"
+    mode: 'hash'// "hash" | "history" | "abstract"
   },
   /*
   ** Customize the progress bar color
